@@ -246,6 +246,38 @@
 
 </main>
 
+<!-- Structured Data: Entität für Suchmaschinen & KI/Answer-Engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "IceCreamShop",
+  "@id": "https://eismacher-berlin.de/#shop",
+  "name": "Die Eismacher",
+  "description": "Handgemachtes Eis aus natürlichen Zutaten in Berlin-Kreuzberg, direkt am Südstern. Täglich frisch gerührt in kleinen Mengen.",
+  "url": "https://eismacher-berlin.de/",
+  "priceRange": "€",
+  "servesCuisine": ["Eis", "Gelato"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Körtestraße 10",
+    "postalCode": "10967",
+    "addressLocality": "Berlin",
+    "addressRegion": "Berlin",
+    "addressCountry": "DE"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 52.49124, "longitude": 13.40853 },
+  "areaServed": "Berlin-Kreuzberg",
+  "hasMap": "https://www.google.com/maps/dir/?api=1&destination=K%C3%B6rtestra%C3%9Fe%2010%2C%2010967%20Berlin",
+  "sameAs": ["https://www.instagram.com/die_eismacher/"],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "13:00",
+    "closes": "20:00"
+  }]
+}
+</script>
+
 <script>
   // ---- Öffnungszeiten: nur diese zwei Werte für den Live-Status anpassen ----
   const OPEN  = "13:00";

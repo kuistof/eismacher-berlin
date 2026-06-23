@@ -1,4 +1,39 @@
+# robots.txt — Die Eismacher
+# Alle Crawler willkommen, inklusive KI-/Answer-Engines, damit die Seite
+# in AI-Antworten (ChatGPT, Perplexity, Google AI Overviews …) zitiert werden kann.
+
 User-agent: *
+Allow: /
+
+# KI- & Answer-Engine-Crawler ausdrücklich erlaubt
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
 Allow: /
 
 Sitemap: https://eismacher-berlin.de/sitemap.xml
