@@ -23,6 +23,7 @@
     --red: #c0102a;
     --red-deep: #8c0c20;
     --berry: #a30f25;
+    --pink: #e79ab2;
     --ivory: #fbf4e8;
     --paper: #fffdf9;
     --ink: #20140d;
@@ -45,6 +46,7 @@
     background-color: var(--ivory);
     background-image:
       radial-gradient(110% 55% at 50% -10%, rgba(192, 16, 42, .12), transparent 60%),
+      radial-gradient(72% 48% at 100% 28%, rgba(231, 154, 178, .16), transparent 55%),
       radial-gradient(80% 60% at 50% 120%, rgba(192, 16, 42, .06), transparent 60%);
     background-attachment: fixed;
     line-height: 1.6;
@@ -142,6 +144,17 @@
   footer a { color: var(--red); text-decoration: none; font-weight: 500; }
   footer .sep { margin: 0 10px; opacity: .4; }
 
+  /* Marke / Story */
+  .story-text { font-family: var(--display); font-size: 1.32rem; line-height: 1.5; color: var(--ink); }
+  .story-text p { margin-bottom: 14px; }
+  .story-text p:last-child { margin-bottom: 0; }
+  .story-text strong { font-weight: 600; font-style: italic; color: var(--red); }
+  .stats { display: flex; flex-wrap: wrap; margin-top: 24px; border-top: 1px solid var(--line); padding-top: 18px; }
+  .stats > div { flex: 1 1 50%; padding: 8px 0; }
+  .stats .n { font-family: var(--display); font-style: italic; font-weight: 600; font-size: 1.7rem; color: var(--red); line-height: 1; }
+  .stats .n .star { color: var(--pink); margin-left: 1px; }
+  .stats .l { font-family: var(--sans); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); margin-top: 6px; }
+
   @media (prefers-reduced-motion: reduce) {
     .reveal, .seal .ring-rot, .status.is-open .dot { animation: none !important; }
     .reveal { opacity: 1; transform: none; }
@@ -176,13 +189,31 @@
     <div class="rule"></div>
     <p class="lede">Handgemachtes Eis aus natürlichen Zutaten — täglich frisch gerührt in der Körtestraße.</p>
 
-    <p class="flavors">Stracciatella <i>◆</i> Pistazie <i>◆</i> Zitrone <i>◆</i> Salzkaramell <i>◆</i> Mango</p>
+    <p class="flavors">Ube <i>◆</i> Chamango <i>◆</i> Pandan <i>◆</i> Pistazie <i>◆</i> Fenchel <i>◆</i> Zitrone</p>
 
     <div class="status" id="status">
       <span class="dot"></span>
       <span id="status-text">Öffnungszeiten</span>
     </div>
   </header>
+
+  <!-- ============ MARKE / STORY ============ -->
+  <section class="card reveal d2">
+    <h2>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 6.5L21 9l-5 4 1.5 7L12 16l-5.5 4L8 13 3 9l6.5-.5z"/></svg>
+      Eis aus Neugier
+    </h2>
+    <div class="story-text">
+      <p><strong>Seit 2010 in Kreuzberg.</strong> Angefangen aus Neugier – und dabei geblieben: über 200 Rezepte im Repertoire, rund 20 Sorten täglich, ständig neue.</p>
+      <p>Ube und Chamango gab es bei uns, lange bevor sie im Trend waren. Handgemacht, in kleinen Mengen, aus natürlichen Zutaten – und die Nachbarschaftskinder von früher stehen heute hinter dem Tresen.</p>
+    </div>
+    <div class="stats">
+      <div><div class="n">2010</div><div class="l">gegründet in Kreuzberg</div></div>
+      <div><div class="n">200+</div><div class="l">Eis-Rezepte</div></div>
+      <div><div class="n">~20</div><div class="l">Sorten täglich</div></div>
+      <div><div class="n">4,6<span class="star">★</span></div><div class="l">auf Google</div></div>
+    </div>
+  </section>
 
   <!-- ============ ÖFFNUNGSZEITEN ============ -->
   <section class="card reveal d2">
