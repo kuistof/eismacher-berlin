@@ -1,0 +1,7 @@
+# Geheimnisse — NICHT committen (dieses Repo ist öffentlich)
+.env
+.env.local
+.env.*.local
+
+# System
+.DS_Store
