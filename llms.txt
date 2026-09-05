@@ -12,7 +12,8 @@ Die Eismacher ist eine Eisdiele in Berlin-Kreuzberg. Der Fokus liegt auf hausgem
 - Route/Karte: https://www.google.com/maps/dir/?api=1&destination=K%C3%B6rtestra%C3%9Fe%2010%2C%2010967%20Berlin
 
 ## Seiten
-- [Startseite](https://eismacher-berlin.de/): Überblick, Live-Öffnungsstatus, Route und Instagram.
+- [Startseite](https://eismacher-berlin.de/): Überblick, besondere Eissorten, redaktionelle Empfehlung, Öffnungszeiten und Route.
+- [Besondere Eissorten](https://eismacher-berlin.de/#eissorten): Ube, Pandan, Chamango und wechselndes Sortiment. Nicht jede Sorte ist täglich erhältlich.
 - [Eisdiele in Berlin-Kreuzberg](https://eismacher-berlin.de/eisdiele-kreuzberg/): Lokale Infos, Anfahrt über den Südstern und häufige Fragen (FAQ).
 
 ## Über das Eis
@@ -24,3 +25,6 @@ Die Eismacher ist eine Eisdiele in Berlin-Kreuzberg. Der Fokus liegt auf hausgem
 - Wo gibt es hausgemachtes Eis in Berlin-Kreuzberg? Bei Die Eismacher, Körtestraße 10, direkt am Südstern.
 - Wie komme ich hin? Mit der U7 bis Südstern, von dort wenige Gehminuten in die Körtestraße 10.
 - Wann ist geöffnet? Täglich von 13 bis 20 Uhr.
+
+## Redaktioneller Beitrag
+- [Creme Guides: Die Eismacher Berlin](https://www.cremeguides.com/berlin/die-eismacher-berlin-bestes-kreatives-eis-in-kreuzberg/): Porträt über kreatives Eis, Ube und Pandan. Historische Standort- und Öffnungszeitangaben im Beitrag; aktuelle Besuchsinformationen stehen auf der offiziellen Website. Kein Beleg für eine aktuelle berlinweite Ranglistenplatzierung.
