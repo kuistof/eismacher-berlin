@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Hausgemachtes Eis in Berlin: Ube & mehr | Die Eismacher</title>
-<meta name="description" content="Entdecke Die Eismacher in Berlin-Kreuzberg: hausgemachtes Eis, Ube und wechselnde Sorten seit 2010. Körtestraße 10 am Südstern. Täglich 14–18 Uhr." />
+<meta name="description" content="Entdecke Die Eismacher in Berlin-Kreuzberg: hausgemachtes Eis, Ube und wechselnde Sorten seit 2010. Körtestraße 10 am Südstern. Winterpause, zurück im Frühjahr 2027." />
 <meta name="theme-color" content="#c0102a" />
 <link rel="canonical" href="https://eismacher-berlin.de/" />
 <meta name="facebook-domain-verification" content="tpca252ovv5ex565fznun837u3eo2b" />
@@ -105,8 +105,35 @@
   .status.is-open .dot { background: #2f9e54; box-shadow: 0 0 0 4px rgba(47,158,84,.16); animation: pulse 2.4s ease-in-out infinite; }
   @keyframes pulse { 50% { box-shadow: 0 0 0 8px rgba(47,158,84,0); } }
 
+  .status.is-paused { color: var(--ink); text-decoration: none; }
+  .status.is-paused .dot { background: var(--pink); box-shadow: 0 0 0 4px rgba(231,154,178,.22); }
+  .status.is-paused:hover { border-color: var(--hair); }
+
+  /* ============ WINTERPAUSE / SAISONSTART ============ */
+  .pause-lead { font-family: var(--display); font-size: 1.5rem; line-height: 1.3; color: var(--ink); }
+  .pause-lead em { color: var(--red); font-weight: 600; }
+  .pause-text { margin-top: 12px; font-family: var(--display); font-size: 1.2rem; line-height: 1.5; color: var(--ink-soft); }
+  .signup { margin-top: 26px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .signup-title { font-family: var(--display); font-style: italic; font-weight: 600; font-size: 1.6rem; line-height: 1.2; color: var(--red); }
+  .signup-text { margin: 8px 0 20px; font-size: .95rem; line-height: 1.6; color: var(--ink); }
+  .field-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .field { flex: 1 1 200px; display: flex; flex-direction: column; gap: 6px; }
+  .field span { font-size: .68rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--berry); }
+  .field small { font-size: inherit; font-weight: 300; text-transform: none; letter-spacing: .02em; color: var(--ink-soft); }
+  .field input { font: 400 1rem var(--sans); color: var(--ink); background: var(--ivory); border: 1px solid var(--hair); border-radius: 10px; padding: 13px 14px; width: 100%; transition: border-color .2s ease, box-shadow .2s ease; }
+  .field input:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 3px rgba(192,16,42,.12); }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .consent { display: flex; gap: 11px; align-items: flex-start; margin: 16px 0 18px; font-size: .84rem; line-height: 1.55; color: var(--ink); cursor: pointer; }
+  .consent input { flex: none; width: 18px; height: 18px; margin-top: 2px; accent-color: var(--red); }
+  .consent a { color: var(--red); font-weight: 500; text-decoration: none; }
+  .consent a:hover { text-decoration: underline; }
+  .btn:disabled { opacity: .6; cursor: wait; transform: none; }
+  .form-msg { margin-top: 12px; font-size: .9rem; line-height: 1.5; min-height: 1px; }
+  .form-msg.ok { color: #2f7d45; font-weight: 500; }
+  .form-msg.err { color: var(--red-deep); }
+  .fineprint { margin-top: 14px; font-size: .74rem; line-height: 1.5; color: var(--ink-soft); }
+
   /* ============ CARDS ============ */
-  .season-note { margin: 18px 0 0; padding: 14px 16px; border-radius: 12px; background: var(--line); font-family: var(--sans); font-size: .93rem; line-height: 1.6; color: var(--ink); }
   .card { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 32px 30px; margin-top: 20px; box-shadow: var(--shadow); }
   .card h2 {
     font-family: var(--sans); font-weight: 500; font-size: .74rem; letter-spacing: .26em;
@@ -195,27 +222,52 @@
     <p class="credo">Hausgemachtes Eis, täglich bei uns in der Körtestraße.</p>
     <p class="credo-note">Deine Eisdiele in Berlin-Kreuzberg am Südstern. Seit 2010, mit natürlichen Zutaten und ständig neuen Sorten.</p>
 
-    <div class="status" id="status">
+    <a class="status is-paused" id="status" href="#saisonstart">
       <span class="dot"></span>
-      <span id="status-text">Öffnungszeiten</span>
-    </div>
+      <span id="status-text">Winterpause · bis Frühjahr 2027</span>
+    </a>
   </header>
 
-  <!-- ============ ÖFFNUNGSZEITEN ============ -->
-  <section class="card reveal d2">
+  <!-- ============ WINTERPAUSE + SAISONSTART-LISTE ============ -->
+  <!-- Zur Saisoneröffnung: diese Section durch die Öffnungszeiten-Section aus Commit 37e9623 ersetzen
+       und unten im Script SAISONPAUSE = false setzen. -->
+  <section class="card reveal d2" id="saisonstart">
     <h2>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-      Öffnungszeiten
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4.9 6l14.2 12M4.9 18L19.1 6M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5"/></svg>
+      Winterpause
     </h2>
-    <!-- Anzeige hier anpassen; der Live-Status rechnet mit OPEN/CLOSE unten im Script -->
-    <div class="hours-row" data-day="1"><span class="day">Montag</span><span class="time">14 – 18 Uhr</span></div>
-    <div class="hours-row" data-day="2"><span class="day">Dienstag</span><span class="time">14 – 18 Uhr</span></div>
-    <div class="hours-row" data-day="3"><span class="day">Mittwoch</span><span class="time">14 – 18 Uhr</span></div>
-    <div class="hours-row" data-day="4"><span class="day">Donnerstag</span><span class="time">14 – 18 Uhr</span></div>
-    <div class="hours-row" data-day="5"><span class="day">Freitag</span><span class="time">14 – 18 Uhr</span></div>
-    <div class="hours-row" data-day="6"><span class="day">Samstag</span><span class="time">14 – 18 Uhr</span></div>
-    <div class="hours-row" data-day="0"><span class="day">Sonntag</span><span class="time">14 – 18 Uhr</span></div>
-    <p class="season-note">Die Saison geht so langsam zu Ende. Je nach Wetter sehen wir uns noch im Oktober. Kommt auf jeden Fall vorbei und probiert unsere herbstlichen Sorten – wir haben ein paar besondere Sachen für euch vorbereitet und würden uns sehr freuen, euch dieses Jahr nochmal zu sehen.</p>
+    <p class="pause-lead">Die Theke ist leer, die Maschinen schlafen.<br />Wir sind <em>im Frühjahr 2027</em> wieder da.</p>
+    <p class="pause-text">Danke für einen wunderbaren Sommer 2026! Im Winter tüfteln wir an neuen Rezepten, damit die Theke zum Saisonstart wieder voll ist.</p>
+
+    <div class="signup">
+      <p class="signup-title">Die erste Kugel geht auf uns.</p>
+      <p class="signup-text">Trag dich ein und wir schreiben dir, sobald wir wieder aufmachen, noch bevor es auf Instagram steht. In der Mail steckt deine Gratis-Kugel für den Saisonstart.</p>
+
+      <form id="signup-form" novalidate>
+        <div class="field-row">
+          <label class="field">
+            <span>Vorname <small>(optional)</small></span>
+            <input type="text" name="vorname" autocomplete="given-name" maxlength="60" />
+          </label>
+          <label class="field">
+            <span>E-Mail</span>
+            <input type="email" name="email" autocomplete="email" required maxlength="120" />
+          </label>
+        </div>
+        <!-- Honeypot gegen Spam-Bots, für Menschen unsichtbar -->
+        <label class="hp" aria-hidden="true">Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+        <label class="consent">
+          <input type="checkbox" name="consent" required />
+          <span>Ja, sagt mir per E-Mail Bescheid, wenn ihr wieder aufmacht, gern auch in den nächsten Jahren. Abmelden geht jederzeit mit einem Klick. Mehr in der <a href="/datenschutz/#saisonstart">Datenschutzerklärung</a>.</span>
+        </label>
+        <button class="btn btn-primary" type="submit">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+          Sagt mir Bescheid
+        </button>
+        <p class="form-msg" id="signup-msg" role="status" aria-live="polite"></p>
+      </form>
+      <p class="fineprint">Eine Kugel pro E-Mail-Adresse, einzulösen gegen Vorzeigen der Eröffnungs-Mail. Nach dem Eintragen bekommst du eine Mail zur Bestätigung.</p>
+    </div>
   </section>
 
   <!-- ============ STANDORT ============ -->
@@ -286,7 +338,7 @@
     <div class="story-text">
       <p>Wenn du hausgemachtes Eis und ungewöhnliche Sorten magst, lerne Die Eismacher am Südstern kennen. Seit 2010 experimentieren wir in Kreuzberg mit eigenen Rezepten und stellen unser Eis in kleinen Mengen her.</p>
       <p>Auch <a href="https://www.cremeguides.com/berlin/die-eismacher-berlin-bestes-kreatives-eis-in-kreuzberg/" target="_blank" rel="noopener">Creme Guides stellt Die Eismacher als „Bestes kreatives Eis in Kreuzberg“ vor</a>. Der redaktionelle Beitrag beschreibt unsere handwerkliche Herstellung und Sorten wie Ube und Pandan.</p>
-      <p class="source-note">Der Beitrag enthält frühere Standort- und Zeitangaben. Für deinen Besuch gilt die Adresse auf unserer Website: Körtestraße 10, 10967 Berlin, täglich 14–18 Uhr.</p>
+      <p class="source-note">Der Beitrag enthält frühere Standort- und Zeitangaben. Für deinen Besuch gilt die Adresse auf unserer Website: Körtestraße 10, 10967 Berlin. Gerade sind wir in der Winterpause und ab Frühjahr 2027 wieder für dich da.</p>
       <p><a href="/eisdiele-kreuzberg/">Anfahrt, Öffnungszeiten und häufige Fragen zur Eisdiele in Kreuzberg</a></p>
     </div>
   </section>
@@ -333,19 +385,27 @@
   "sameAs": ["https://www.instagram.com/die_eismacher/"],
   "openingHoursSpecification": [{
     "@type": "OpeningHoursSpecification",
+    "description": "Winterpause, Wiedereröffnung im Frühjahr 2027",
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-    "opens": "14:00",
-    "closes": "18:00"
+    "opens": "00:00",
+    "closes": "00:00",
+    "validFrom": "2026-10-09",
+    "validThrough": "2027-02-28"
   }]
 }
 </script>
 
 <script>
+  // ---- Saisonpause: true = Winterpause-Status im Hero, kein Live-Status ----
+  const SAISONPAUSE = true;
   // ---- Öffnungszeiten: nur diese zwei Werte für den Live-Status anpassen ----
   const OPEN  = "14:00";
   const CLOSE = "18:00";
+  // ---- Google-Apps-Script-Web-App für die Saisonstart-Liste (siehe docs/saisonstart-liste/) ----
+  const SIGNUP_ENDPOINT = "https://script.google.com/macros/s/AKfycbzGTz_y5KxXQxAQNHlWexZ3NwBop5PjjxDmPWvyVLn9anOiPmSkWFJtTKO7xGj8vPiE/exec";
   // --------------------------------------------------------------------------
   (function () {
+    if (SAISONPAUSE) return;
     const toMin = t => { const [h, m] = t.split(":").map(Number); return h * 60 + m; };
     const now = new Date();
     const cur = now.getHours() * 60 + now.getMinutes();
@@ -361,6 +421,46 @@
 
     const row = document.querySelector('.hours-row[data-day="' + now.getDay() + '"]');
     if (row) row.classList.add("today");
+  })();
+
+  // ---- Saisonstart-Liste: Eintragung an die Google-Tabelle schicken ----
+  (function () {
+    const form = document.getElementById("signup-form");
+    if (!form) return;
+    const msg = document.getElementById("signup-msg");
+    const btn = form.querySelector("button[type=submit]");
+    const say = (text, kind) => { msg.textContent = text; msg.className = "form-msg " + (kind || ""); };
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = form.email.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say("Bitte prüf noch mal deine E-Mail-Adresse.", "err"); form.email.focus(); return; }
+      if (!form.consent.checked) { say("Bitte setz noch den Haken, damit wir dir schreiben dürfen.", "err"); return; }
+      if (!SIGNUP_ENDPOINT) { say("Die Liste ist gleich startklar. Schau in ein paar Tagen wieder vorbei oder folg uns so lange auf Instagram.", "err"); return; }
+
+      btn.disabled = true; say("Einen Moment …");
+      try {
+        const res = await fetch(SIGNUP_ENDPOINT, {
+          method: "POST",
+          body: new URLSearchParams({
+            email, vorname: form.vorname.value.trim(), website: form.website.value, quelle: location.pathname
+          })
+        });
+        const data = await res.json();
+        if (!data.ok) throw new Error(data.error || "fehler");
+        form.reset();
+        if (data.status === "schon_dabei") {
+          say("Du stehst schon auf der Liste. Wir melden uns im Frühjahr!", "ok");
+        } else {
+          say("Fast geschafft! Wir haben dir eine Mail geschickt. Bitte bestätige kurz den Link darin, sonst dürfen wir dir nicht schreiben.", "ok");
+          if (window.fbq) { try { window.fbq("track", "Lead", { content_name: "Saisonstart-Liste" }); } catch (err) {} }
+        }
+      } catch (err) {
+        say("Da ist etwas schiefgegangen. Versuch es bitte gleich noch mal.", "err");
+      } finally {
+        btn.disabled = false;
+      }
+    });
   })();
 </script>
 <script src="/tracking.js" defer></script>
