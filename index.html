@@ -111,8 +111,8 @@
 
   /* ============ WINTERPAUSE / SAISONSTART ============ */
   .pause-lead { font-family: var(--display); font-size: 1.5rem; line-height: 1.3; color: var(--ink); }
-  .pause-lead em { color: var(--red); font-weight: 600; }
-  .pause-text { margin-top: 12px; font-family: var(--display); font-size: 1.2rem; line-height: 1.5; color: var(--ink-soft); }
+  .pause-sub { margin-top: 8px; font-family: var(--display); font-style: italic; font-weight: 600; font-size: 1.3rem; color: var(--red); }
+  .pause-text { margin-top: 16px; font-family: var(--display); font-size: 1.2rem; line-height: 1.5; color: var(--ink-soft); }
   .signup { margin-top: 26px; padding-top: 24px; border-top: 1px solid var(--line); }
   .signup-title { font-family: var(--display); font-style: italic; font-weight: 600; font-size: 1.6rem; line-height: 1.2; color: var(--red); }
   .signup-text { margin: 8px 0 20px; font-size: .95rem; line-height: 1.6; color: var(--ink); }
@@ -236,8 +236,10 @@
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4.9 6l14.2 12M4.9 18L19.1 6M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5"/></svg>
       Winterpause
     </h2>
-    <p class="pause-lead">Die Theke ist leer, die Maschinen schlafen.<br />Wir sind <em>im Frühjahr 2027</em> wieder da.</p>
-    <p class="pause-text">Danke für einen wunderbaren Sommer 2026! Im Winter tüfteln wir an neuen Rezepten, damit die Theke zum Saisonstart wieder voll ist.</p>
+    <!-- Gruß wechselt automatisch nach Datum, siehe /saison.js -->
+    <p class="pause-lead" data-gruss>Allen unseren Eisfreunden, Gästen und Nachbarn eine ganz tolle Herbstzeit!</p>
+    <p class="pause-sub" data-gruss-zusatz>Wir sehen uns nächste Saison.</p>
+    <p class="pause-text">Wir bedanken uns für eine ganz tolle Eissaison 2026 und freuen uns alle, euch <span data-wann>nächstes Jahr</span> wieder begrüßen zu dürfen. Für die Pause haben wir uns einiges vorgenommen und werden im Frühjahr in neuem Glanz erstrahlen, mit ein paar Neuheiten und den beliebtesten Klassikern.</p>
 
     <div class="signup">
       <p class="signup-title">Die erste Kugel geht auf uns.</p>
@@ -463,6 +465,7 @@
     });
   })();
 </script>
+<script src="/saison.js" defer></script>
 <script src="/tracking.js" defer></script>
 </body>
 </html>
